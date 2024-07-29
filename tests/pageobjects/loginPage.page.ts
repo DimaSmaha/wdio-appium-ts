@@ -1,37 +1,27 @@
 import Footer from "./footer.page.js";
 
 class LoginPage extends Footer {
-  get btnSignUpContainer(): ChainablePromiseElement {
-    return $('//*[@content-desc="button-sign-up-container"]');
-  }
-
-  get inputEmail(): ChainablePromiseElement {
-    return $("~input-email");
-  }
-
-  get inputPassword(): ChainablePromiseElement {
-    return $("~input-password");
-  }
-
-  get inputRepeatPassword(): ChainablePromiseElement {
-    return $("~input-repeat-password");
-  }
-
-  get btnSignUp(): ChainablePromiseElement {
-    return $('//*[@content-desc="button-SIGN UP"]');
-  }
-
-  get popupSignupSuccessMessage(): ChainablePromiseElement {
-    return $('//*[@resource-id="android:id/message"]');
-  }
+  btnSignUpContainer: '//*[@content-desc="button-sign-up-container"]';
+  inputEmail: "~input-email";
+  inputPassword: "~input-password";
+  inputRepeatPassword: "~input-repeat-password";
+  btnSignUp: '//*[@content-desc="button-SIGN UP"]';
+  popupSignupSuccessMessage: '//*[@resource-id="android:id/message"]';
 
   async signUp(email: string, password: string): Promise<void> {
-    await super.loginWidget.click();
-    await this.btnSignUpContainer.click();
-    await this.inputEmail.setValue(email);
-    await this.inputPassword.setValue(password);
-    await this.inputRepeatPassword.setValue(password);
-    await this.btnSignUp.click();
+    // await $(super.loginWidget).click();
+    // await $(this.btnSignUpContainer).click();
+    // await $(this.inputEmail).setValue(email);
+    // await $(this.inputPassword).setValue(password);
+    // await $(this.inputRepeatPassword).setValue(password);
+    // await $(this.btnSignUp).click();
+
+    await this.clickElement(super.loginWidget);
+    await this.clickElement(this.btnSignUpContainer);
+    await this.setElementInputValue(this.inputEmail, email);
+    await this.setElementInputValue(this.inputPassword, password);
+    await this.setElementInputValue(this.inputRepeatPassword, password);
+    await this.clickElement(this.btnSignUp);
   }
 }
 

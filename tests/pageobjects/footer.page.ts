@@ -1,17 +1,16 @@
-import { $ } from "@wdio/globals";
+import Page from "./helper.js";
 
-class Footer {
-  get loginWidget(): ChainablePromiseElement {
-    return $('//*[@content-desc="Login"]');
-  }
+class Footer extends Page {
+  // get loginWidget(): ChainablePromiseElement {
+  //   return $('//*[@content-desc="Login"]');
+  // }
+  // async btnSignUpContainer(): Promise<WebdriverIO.Element> {
+  //   return this.getElement('//*[@content-desc="button-sign-up-container"]');
+  // }
 
-  get webviewWidget(): ChainablePromiseElement {
-    return $('//*[@text="Webview"]');
-  }
-
-  get swipeWidget(): ChainablePromiseElement {
-    return $('//*[@text="Swipe"]');
-  }
+  loginWidget: '//*[@content-desc="Login"]';
+  webviewWidget: '//*[@text="Webview"]';
+  swipeWidget: '//*[@text="Swipe"]';
 }
 
 export default Footer;
