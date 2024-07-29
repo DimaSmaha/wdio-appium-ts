@@ -1,0 +1,46 @@
+{
+  "name": "ts-wdio-bs",
+  "type": "module",
+  "scripts": {
+    "test-android": "wdio run ./configs/wdio.android.conf.js",
+    "test-android-bs": "wdio run ./configs/wdio.android.bs.conf.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,ts,json}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.3.1",
+    "@types/node": "^20.12.6",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "dotenv": "^16.4.5",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-cypress": "^3.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "husky": "^4.3.8",
+    "@wdio/appium-service": "^8.24.3",
+    "@wdio/browserstack-service": "^8.24.5",
+    "@wdio/cli": "^8.24.3",
+    "@wdio/local-runner": "^8.24.3",
+    "@wdio/mocha-framework": "^8.24.3",
+    "@wdio/spec-reporter": "^8.24.2",
+    "allure-commandline": "^2.24.1",
+    "appium": "^2.2.2",
+    "appium-uiautomator2-driver": "^2.34.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.4.5"
+  }
+}
