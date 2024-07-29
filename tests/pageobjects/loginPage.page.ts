@@ -1,12 +1,14 @@
 import Footer from "./footer.page.js";
 
 class LoginPage extends Footer {
-  btnSignUpContainer: '//*[@content-desc="button-sign-up-container"]';
-  inputEmail: "~input-email";
-  inputPassword: "~input-password";
-  inputRepeatPassword: "~input-repeat-password";
-  btnSignUp: '//*[@content-desc="button-SIGN UP"]';
-  popupSignupSuccessMessage: '//*[@resource-id="android:id/message"]';
+  el = {
+    btnSignUpContainer: '//*[@content-desc="button-sign-up-container"]',
+    inputEmail: "~input-email",
+    inputPassword: "~input-password",
+    inputRepeatPassword: "~input-repeat-password",
+    btnSignUp: '//*[@content-desc="button-SIGN UP"]',
+    popupSignupSuccessMessage: '//*[@resource-id="android:id/message"]',
+  };
 
   async signUp(email: string, password: string): Promise<void> {
     // await $(super.loginWidget).click();
@@ -16,12 +18,12 @@ class LoginPage extends Footer {
     // await $(this.inputRepeatPassword).setValue(password);
     // await $(this.btnSignUp).click();
 
-    await this.clickElement(super.loginWidget);
-    await this.clickElement(this.btnSignUpContainer);
-    await this.setElementInputValue(this.inputEmail, email);
-    await this.setElementInputValue(this.inputPassword, password);
-    await this.setElementInputValue(this.inputRepeatPassword, password);
-    await this.clickElement(this.btnSignUp);
+    await this.clickElement(super.commonEl.loginWidget);
+    await this.clickElement(this.el.btnSignUpContainer);
+    await this.setElementInputValue(this.el.inputEmail, email);
+    await this.setElementInputValue(this.el.inputPassword, password);
+    await this.setElementInputValue(this.el.inputRepeatPassword, password);
+    await this.clickElement(this.el.btnSignUp);
   }
 }
 
