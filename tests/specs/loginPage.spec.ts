@@ -11,10 +11,10 @@ describe("Login/Sign Up Form", () => {
 
     await loginPage.signUp("testing123@mailnator.com", "SuperSecretPassword!");
     await expect(
-      loginPage.isElementExist(loginPage.popupSignupSuccessMessage),
+      loginPage.isElementExist(loginPage.el.popupSignupSuccessMessage),
     ).toBeExisting();
     await expect(
-      loginPage.getElementText(loginPage.popupSignupSuccessMessage),
+      loginPage.getElementText(loginPage.el.popupSignupSuccessMessage),
     ).toHaveTextContaining("You successfully signed up!");
   });
 });
