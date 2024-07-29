@@ -60,18 +60,16 @@ export default class Page {
   }
 
   public async waitUntilElementDisplayed(element: string): Promise<void> {
-    await browser.waitUntil(() => {
-      return this.isElementDisplayed(element);
-    });
+    await browser.waitUntil(() => this.isElementDisplayed(element));
   }
 
   public async waitUntilElementByIndexDisplayed(
     element: string,
     index: number,
   ) {
-    await browser.waitUntil(() => {
-      return this.isElementByIndexDisplayed(element, index);
-    });
+    await browser.waitUntil(() =>
+      this.isElementByIndexDisplayed(element, index),
+    );
   }
 
   public async getElementText(element: string): Promise<string> {
@@ -141,15 +139,11 @@ export default class Page {
   }
 
   public async waitForAlert(): Promise<void> {
-    await browser.waitUntil(() => {
-      return browser.getAlertText() !== null;
-    });
+    await browser.waitUntil(() => browser.getAlertText() !== null);
   }
 
   public async waitNoAlert(): Promise<void> {
-    await browser.waitUntil(() => {
-      return browser.getAlertText() == null;
-    });
+    await browser.waitUntil(() => browser.getAlertText() == null);
   }
 
   public async getAlertText(): Promise<string | undefined> {

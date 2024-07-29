@@ -1,6 +1,6 @@
 import webviewPage from "../pageobjects/webviewPage.page.js";
 
-//Should fail
+// Should fail
 describe("Webview Page", () => {
   it("should verify webview page", async () => {
     // await $(webviewPage.el.webviewWidget).click();

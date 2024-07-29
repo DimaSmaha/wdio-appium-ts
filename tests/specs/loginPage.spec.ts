@@ -1,6 +1,6 @@
 import loginPage from "../pageobjects/loginPage.page.js";
 
-//Should pass
+// Should pass
 describe("Login/Sign Up Form", () => {
   it("should signup with valid credentials", async () => {
     // await loginPage.signUp("testing123@mailnator.com", "SuperSecretPassword!");
