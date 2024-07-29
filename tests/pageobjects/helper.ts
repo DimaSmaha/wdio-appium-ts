@@ -38,6 +38,11 @@ export default class Page {
     return elem.isClickable();
   }
 
+  public async isElementExist(element: string): Promise<boolean> {
+    const elem = await this.getElement(element);
+    return elem.isExisting();
+  }
+
   public async isElementByIndexDisplayed(
     element: string,
     index: number,
