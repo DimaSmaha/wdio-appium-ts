@@ -3,9 +3,9 @@ import webviewPage from "../pageobjects/webviewPage.page.js";
 //Should fail
 describe("Webview Page", () => {
   it("should verify webview page", async () => {
-    // await $(webviewPage.webviewWidget).click();
-    // await $(webviewPage.viewOnGH).scrollIntoView();
-    // await expect($(webviewPage.viewOnGH)).toBeDisplayed();
+    // await $(webviewPage.el.webviewWidget).click();
+    // await $(webviewPage.el.viewOnGH).scrollIntoView();
+    // await expect($(webviewPage.el.viewOnGH)).toBeDisplayed();
 
     await webviewPage.clickElement(webviewPage.commonEl.webviewWidget);
     await webviewPage.scrollElementIntoView(webviewPage.el.viewOnGH);

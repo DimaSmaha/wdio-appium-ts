@@ -18,7 +18,7 @@ class LoginPage extends Footer {
     // await $(this.inputRepeatPassword).setValue(password);
     // await $(this.btnSignUp).click();
 
-    await this.clickElement(super.commonEl.loginWidget);
+    await this.clickElement(this.commonEl.loginWidget);
     await this.clickElement(this.el.btnSignUpContainer);
     await this.setElementInputValue(this.el.inputEmail, email);
     await this.setElementInputValue(this.el.inputPassword, password);

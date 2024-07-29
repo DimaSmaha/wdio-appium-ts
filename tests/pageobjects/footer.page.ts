@@ -7,6 +7,7 @@ class Footer extends Page {
   // async btnSignUpContainer(): Promise<WebdriverIO.Element> {
   //   return this.getElement('//*[@content-desc="button-sign-up-container"]');
   // }
+
   commonEl = {
     loginWidget: '//*[@text="Login"]',
     webviewWidget: '//*[@text="Webview"]',
