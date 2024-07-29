@@ -10,7 +10,7 @@ describe("Webview Page", () => {
     await webviewPage.clickElement(webviewPage.commonEl.webviewWidget);
     await webviewPage.scrollElementIntoView(webviewPage.el.viewOnGH);
     await expect(
-      webviewPage.isElementDisplayed(webviewPage.el.viewOnGH),
+      await webviewPage.isElementDisplayed(webviewPage.el.viewOnGH),
     ).toBeDisplayed();
   });
 });
