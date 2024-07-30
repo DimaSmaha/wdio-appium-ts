@@ -7,11 +7,13 @@ import { browser, $, $$ } from "@wdio/globals";
  */
 
 export default class Page {
-  public async getElement(element: string) {
+  public async getElement(element: string): Promise<WebdriverIO.Element> {
     return $(element);
   }
 
-  public async getAllElements(element: string) {
+  public async getAllElements(
+    element: string,
+  ): Promise<WebdriverIO.ElementArray> {
     return $$(element);
   }
 
@@ -25,8 +27,12 @@ export default class Page {
     return outerHTML.getHTML();
   }
 
-  public async getElementByIndex(element: string, index: number) {
-    return this.getAllElements(element)[index];
+  public async getElementByIndex(
+    element: string,
+    index: number,
+  ): Promise<WebdriverIO.Element> {
+    const elements = await this.getAllElements(element);
+    return elements[index];
   }
 
   public async isElementDisplayed(element: string): Promise<boolean> {
