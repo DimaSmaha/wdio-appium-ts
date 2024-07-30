@@ -1,4 +1,4 @@
-import Footer from "./footer.page.js";
+import Footer from "../pageobjects/footer.page.js";
 
 class LoginPage extends Footer {
   el = {

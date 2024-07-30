@@ -5,8 +5,8 @@ export const config = {
   user: process.env.BROWSERSTACK_USERNAME || "BROWSERSTACK_USERNAME",
   key: process.env.BROWSERSTACK_ACCESS_KEY || "BROWSERSTACK_ACCESS_KEY",
 
-  specs: ["../tests/specs/**/*.spec.ts"],
-  // specs: ["../tests/specs/loginPage.spec.ts"],
+  // specs: ["../tests/specs/**/*.spec.ts"],
+  specs: ["../tests/specs/loginPage.spec.ts"],
 
   capabilities: [
     {
@@ -17,5 +17,6 @@ export const config = {
       "appium:app": process.env.BROWSERSTACK_APP_ID || "bs://<hashed app-id>",
     },
   ],
+
   services: [["browserstack"]],
 };

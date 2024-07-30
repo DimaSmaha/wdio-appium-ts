@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { browser, $, $$ } from "@wdio/globals";
 
 /**
@@ -151,12 +152,13 @@ export default class Page {
       await this.waitForAlert();
       return browser.getAlertText();
     }
+    return undefined;
   }
 
-  public async waitForAlertText(text: string): Promise<void> {
+  public async waitForAlertText(alertText: string): Promise<void> {
     await browser.waitUntil(async () => {
       const text = await browser.getAlertText();
-      return text.includes(text);
+      return text.includes(alertText);
     });
   }
 
@@ -188,7 +190,8 @@ export default class Page {
 
   async alertAction(text: string, action: string): Promise<void> {
     await this.waitForAlertText(text);
-    if (action == "accept") {
+    if (action === "accept") {
+      // was == before the linter
       await this.clickAcceptAlert();
     } else {
       await this.clickCancelAlert();

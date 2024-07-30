@@ -1,4 +1,4 @@
-import Page from "./helper.js";
+import Page from "../pageobjects/helper.js";
 
 class Footer extends Page {
   // get loginWidget(): ChainablePromiseElement {

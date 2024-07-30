@@ -1,6 +1,6 @@
 import { config as baseConfig } from "./base.config.conf.js";
 
-exports.config = {
+export const config = {
   ...baseConfig,
   port: 4723,
 
