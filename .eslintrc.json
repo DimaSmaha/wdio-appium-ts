@@ -6,12 +6,11 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "env": {
-    "cypress/globals": true,
     "browser": true,
     "commonjs": true,
     "es2021": true
   },
-  "plugins": ["cypress", "chai-friendly", "prettier", "@typescript-eslint"],
+  "plugins": ["chai-friendly", "prettier", "@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -21,7 +20,8 @@
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "moduleDirectory": ["node_modules", "tests", "configs"]
+        "moduleDirectory": ["node_modules", "tests", "configs"],
+        "paths": ["tests", "configs"]
       }
     }
   },
@@ -36,6 +36,7 @@
         "tsx": "never"
       }
     ],
+    "import/no-unresolved": "off",
     "lines-between-class-members": "off",
     "no-whitespace-before-property": "off",
     "chai-friendly/no-unused-expressions": "error",
@@ -106,10 +107,6 @@
       }
     ],
 
-    "cypress/assertion-before-screenshot": "off",
-    "cypress/no-unnecessary-waiting": "off",
-    "no-unused-expressions": "off",
-    "cypress/no-pause": "off",
-    "cypress/no-force": "off"
+    "no-unused-expressions": "off"
   }
 }
